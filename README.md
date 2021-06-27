@@ -20,7 +20,7 @@ localhost:1489/api/v1/clients/create
       }
    ]
 }
-##Response example
+## Response example
 {
   "client_id": 123
 }
@@ -30,7 +30,7 @@ localhost:1489/api/v1/clients/create
 localhost:1489/api/v1/clients/{id}/accounts
 ## Request example
 localhost:1489/api/v1/clients/222/accounts
-##Response example
+## Response example
 [
    {
       "account_id":654,
@@ -55,7 +55,7 @@ localhost:1489/api/v1/payments/create
    "amount":100.00,
    "reason":"назначение платежа"
 }
-##Response example
+## Response example
 {
   "payment_id": 789
 }
@@ -63,7 +63,7 @@ localhost:1489/api/v1/payments/create
 # Payments create
 ## URL
 localhost:1489/api/v1/payments/createList
-##Request example
+## Request example
 [
    {
       "source_acc_id":654,
@@ -78,7 +78,7 @@ localhost:1489/api/v1/payments/createList
       "reason":"назначение платежа"
    }
 ]
-##Response example
+## Response example
 [
    {
       "payment_id":789,
@@ -99,7 +99,7 @@ localhost:1489/api/v1/payments/getList
    "source_acc_id":2,
    "dest_acc_id":121213
 }
-##Response example
+## Response example
 [
     {
         "payment_id": 1,
