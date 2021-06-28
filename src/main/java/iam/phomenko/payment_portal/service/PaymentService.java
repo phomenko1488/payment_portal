@@ -81,11 +81,10 @@ public class PaymentService {
     }
 
     public boolean valid(Payment payment) {
-        if (payment.getDestinationAccount() == null || payment.getSourceAccount() == null||payment.getAmount().doubleValue()<=0) {
+        if (payment.getDestinationAccount() == null || payment.getSourceAccount() == null || payment.getAmount().doubleValue() <= 0) {
             payment.setStatus(PaymentStatus.ERROR);
             return false;
-        }
-        else
+        } else
             payment.setStatus(PaymentStatus.OK);
         return true;
     }
@@ -109,13 +108,13 @@ public class PaymentService {
 
     public List<PaymentListResponse> getList(PaymentListRequest paymentListRequest) {
         Account sourceAccount = accountRepository.getAccountById(paymentListRequest.getSource_acc_id());
-        if (sourceAccount==null)
+        if (sourceAccount == null)
             return new ArrayList<>();
         Account destinationAccount = accountRepository.getAccountById(paymentListRequest.getDest_acc_id());
-        if (destinationAccount==null)
+        if (destinationAccount == null)
             return new ArrayList<>();
         Client payer = clientRepository.getClientById(paymentListRequest.getPayer_id());
-        if (payer==null)
+        if (payer == null)
             return new ArrayList<>();
         Client recipient = clientRepository.getClientById(paymentListRequest.getRecipient_id());
         if (recipient == null)
@@ -130,6 +129,6 @@ public class PaymentService {
     }
 
     public boolean validateRequest(PaymentCreateRequest paymentCreateRequest) {
-        return paymentCreateRequest.getAmount().doubleValue()>=0;
+        return paymentCreateRequest.getAmount().doubleValue() >= 0;
     }
 }

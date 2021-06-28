@@ -13,6 +13,7 @@ import java.math.BigDecimal;
 @Getter
 @Setter
 @ToString
+
 @Entity
 @Table(name = "t_accounts")
 public class Account {

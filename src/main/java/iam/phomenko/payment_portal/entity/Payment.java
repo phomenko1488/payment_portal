@@ -11,7 +11,7 @@ import java.util.Calendar;
 @EqualsAndHashCode
 @Getter
 @Setter
-@ToString()
+@ToString
 
 @Entity
 @Table(name = "payments")

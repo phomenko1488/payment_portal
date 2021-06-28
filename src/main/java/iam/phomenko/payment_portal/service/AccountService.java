@@ -1,13 +1,10 @@
 package iam.phomenko.payment_portal.service;
 
 import iam.phomenko.payment_portal.entity.Account;
-import iam.phomenko.payment_portal.entity.AccountType;
-import iam.phomenko.payment_portal.entity.Client;
 import iam.phomenko.payment_portal.repository.AccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
 

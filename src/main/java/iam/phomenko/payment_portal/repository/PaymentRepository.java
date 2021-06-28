@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface PaymentRepository extends JpaRepository<Payment, Long> {
-Payment getPaymentById(Long id);
-List<Payment> getPaymentsBySourceAccountAndDestinationAccount(Account source,Account destination);
+    Payment getPaymentById(Long id);
+
+    List<Payment> getPaymentsBySourceAccountAndDestinationAccount(Account source, Account destination);
 }
