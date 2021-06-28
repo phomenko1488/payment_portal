@@ -51,7 +51,7 @@ public class PaymentService {
         sourceAccount.setBalance(sourceAccount.getBalance().subtract(amount));
     }
 
-    public boolean pay(Payment payment) {
+    public void pay(Payment payment) {
         Account sourceAccount = payment.getSourceAccount();
         Account destinationAccount = payment.getDestinationAccount();
 
@@ -59,14 +59,13 @@ public class PaymentService {
         if (sourceAccount.getBalance().doubleValue() < paymentAmount.doubleValue()) {
             payment.setStatus(PaymentStatus.ERROR);
             save(payment);
-            return false;
+            return;
         }
         sendMoney(destinationAccount, sourceAccount, paymentAmount);
         payment.setStatus(PaymentStatus.OK);
         accountRepository.save(sourceAccount);
         accountRepository.save(destinationAccount);
         save(payment);
-        return true;
     }
 
     public Payment requestToPayment(PaymentCreateRequest request) {

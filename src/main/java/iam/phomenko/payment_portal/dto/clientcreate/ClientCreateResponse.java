@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 @Data
 public class ClientCreateResponse {
     private Long client_id;
+
     public static ClientCreateResponse fromClient(Client client) {
         return new ClientCreateResponse(client.getId());
     }

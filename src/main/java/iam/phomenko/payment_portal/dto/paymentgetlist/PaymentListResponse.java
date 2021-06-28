@@ -19,12 +19,6 @@ public class PaymentListResponse {
     private ClientDTO payer;
     private ClientDTO recipient;
 
-    private Client toResponseClient(Client client) {
-        client.setAccounts(null);
-        client.setId(null);
-        return client;
-    }
-
     public PaymentListResponse(Long payment_id, Calendar timestamp, Long src_acc_num, Long dest_acc_num, BigDecimal amount, Client payer, Client recipient) {
         this.payment_id = payment_id;
         this.timestamp = timestamp;

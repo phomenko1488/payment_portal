@@ -18,9 +18,11 @@ public class Response {
     public static ResponseEntity<Object> ok(Object object) {
         return new ResponseEntity<>(object, HttpStatus.OK);
     }
-    public static ResponseEntity<Object> ok(Object object,int code) {
+
+    public static ResponseEntity<Object> ok(Object object, int code) {
         return new ResponseEntity<>(object, HttpStatus.valueOf(code));
     }
+
     public static ResponseEntity<Object> error(String message) {
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new Response(HttpStatus.INTERNAL_SERVER_ERROR.value(), message));
     }

@@ -7,13 +7,11 @@ import iam.phomenko.payment_portal.entity.Account;
 import iam.phomenko.payment_portal.entity.Client;
 import iam.phomenko.payment_portal.service.AccountService;
 import iam.phomenko.payment_portal.service.ClientService;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.logging.Logger;
 
 @RestController
 @ResponseBody
@@ -39,7 +37,7 @@ public class ClientController {
             return Response.validationError(String.format("Invalid id %s, try correct id", id));
         Client client = clientService.getOneById(Long.valueOf(id));
         if (client == null)
-            return Response.validationError(String.format("Client with id %s does'nt exist", id));
+            return Response.error(String.format("Client with id %s does'nt exist", id));
         return Response.ok(client);
     }
 

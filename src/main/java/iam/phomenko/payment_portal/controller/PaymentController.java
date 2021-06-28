@@ -48,7 +48,7 @@ public class PaymentController {
             paymentService.pay(payment);
         else
             paymentService.save(payment);
-        return Response.ok(new PaymentCreateResponse(payment.getId()),201);
+        return Response.ok(new PaymentCreateResponse(payment.getId()), 201);
     }
 
     @PostMapping("/createList")

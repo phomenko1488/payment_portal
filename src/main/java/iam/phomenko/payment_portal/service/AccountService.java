@@ -20,15 +20,6 @@ public class AccountService {
         this.accountRepository = accountRepository;
     }
 
-    public Account create(Client owner) {
-        Account account = new Account();
-        account.setBalance(BigDecimal.ZERO);
-        account.setOwner(owner);
-        account.setAccountType(AccountType.CARD);
-
-        return account;
-    }
-
     public List<Account> getAll() {
         return accountRepository.findAll();
     }
